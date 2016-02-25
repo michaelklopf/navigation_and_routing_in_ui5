@@ -17,7 +17,7 @@
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
-					"localUri" : "localService/metadata.xml"
+					"localUri": "localService/metadata.xml"
 				}
 			}
 		}
@@ -31,14 +31,14 @@
 			"phone": true
 		},
 		"supportedThemes": ["sap_bluecrystal"]
-  	},
+	},
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": "sap.ui.demo.nav.view.App",
 		"dependencies": {
 			"minUI5Version": "1.30",
 			"libs": {
-				"sap.m": { }
+				"sap.m": {}
 			}
 		},
 		"models": {
@@ -51,6 +51,31 @@
 			"": {
 				"dataSource": "employeeRemote"
 			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.demo.nav.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "appHome",
+				"target": "home"
+			}],
+			"targets": {
+				"home": {
+				   "viewName": "Home",
+				   "viewLevel" : 1
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": false,
+			"cozy": true
 		}
 	}
 }
