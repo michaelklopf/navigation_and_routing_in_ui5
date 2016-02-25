@@ -21,8 +21,6 @@ sap.ui.define([
 			var args, view;
 			args = evt.getParameter("arguments");
 			view = this.getView();
-			
-			console.log(args);
 
 			view.bindElement({
 				path : "/Employees(" + args.employeeId + ")",
@@ -43,6 +41,13 @@ sap.ui.define([
 			if (!this.getView().getBindingContext()) {
 				this.getRouter().getTargets().display("notFound");
 			}
+		},
+		onShowResume: function() {
+			var ctx = this.getView().getElementBinding().getBoundContext();
+			
+			this.getRouter().navTo("employeeResume", {
+				employeeId: ctx.getProperty("EmployeeID")
+			});
 		}
 	});
 });
