@@ -73,6 +73,11 @@
 				"pattern": "employees",
 				"name": "employeeList",
 				"target": "employees"
+			},
+			{
+				"pattern": "employees/{employeeId}",
+				"name": "employee",
+				"target": "employee"
 			}],
 			"targets": {
 				"home": {
@@ -87,6 +92,10 @@
 					"viewPath": "sap.ui.demo.nav.view.employees",
 					"viewName": "EmployeeList",
 					"viewLevel": 2
+				},
+				"employee": {
+					"viewName": "employees.Employee",
+					"viewLevel": 3
 				}
 			}
 		},
