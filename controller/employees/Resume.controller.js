@@ -30,6 +30,11 @@ sap.ui.define([
 			query = args["?query"];
 			if (query && _validTabKeys.indexOf(query.tab) > -1) {
 				view.getModel("view").setProperty("/selectedTabKey", query.tab);
+				// lazy loading of tabs is done here
+				if (query.tab === "Hobbies" || query.tab === "Notes") {
+					// targets are resumeTabHobbies or resumeTabNotes hence
+					this.getRouter().getTargets().display("resumeTab" + query.tab);
+				}
 			} else {
 				this.getRouter().navTo("employeeResume", {
 					employeeId: args.employeeId,
